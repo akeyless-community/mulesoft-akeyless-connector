@@ -1,0 +1,10 @@
+akeyless:
+  apiUrl: "https://api.akeyless.io"
+  accessId: "${AKEYLESS_ACCESS_ID}"
+  accessKey: "${AKEYLESS_ACCESS_KEY}"
+  secretBasePath: "/mulesoft/demo"
+
+secretPath: "static-password"
+dynamicSecretPath: "db-dynamic"
+rotatedSecretPath: "db-rotated"
+secretKey: ""

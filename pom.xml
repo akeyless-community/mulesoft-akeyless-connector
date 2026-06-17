@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.akeyless</groupId>
+	<artifactId>akeyless-connector</artifactId>
+	<version>1.0.0</version>
+	<packaging>mule-extension</packaging>
+	<name>Akeyless Connector</name>
+
+	<parent>
+		<groupId>org.mule.extensions</groupId>
+		<artifactId>mule-modules-parent</artifactId>
+		<version>1.1.3</version>
+	</parent>
+
+	<properties>
+		<repository.id>anypoint-exchange</repository.id>
+		<exchange.url>
+			https://maven.anypoint.mulesoft.com/api/v2/organizations/${project.groupId}/maven
+		</exchange.url>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>https://repository.mulesoft.org/releases/</url>
+		</repository>
+		<repository>
+			<id>akeyless-java</id>
+			<name>Akeyless Java SDK</name>
+			<url>https://akeyless.jfrog.io/artifactory/akeyless-java</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<name>JitPack</name>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>https://repository.mulesoft.org/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<forkMode>never</forkMode>
+					<systemPropertyVariables>
+						<log4j.configuration>file:${basedir}/src/test/resources/log4j2-test.xml</log4j.configuration>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>${repository.id}</id>
+			<name>Akeyless Connector Repository</name>
+			<url>${exchange.url}</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.akeyless</groupId>
+			<artifactId>akeyless-java</artifactId>
+			<version>5.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.akeylesslabs</groupId>
+			<artifactId>akeyless-java-cloud-id-lightweight</artifactId>
+			<version>v0.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.tests</groupId>
+			<artifactId>mule-tests-unit</artifactId>
+			<version>4.1.1</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.logging.log4j</groupId>
+					<artifactId>log4j-slf4j-impl</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mule.runtime</groupId>
+					<artifactId>mule-module-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

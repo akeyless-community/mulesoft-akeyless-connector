@@ -1,0 +1,18 @@
+{
+  "minMuleVersion": "4.1.4",
+  "requiredProduct": "MULE_EE",
+  "extensionModelLoaderDescriptor": {
+    "id": "crafted"
+  },
+  "name": "akeyless-connector",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": ["io.akeyless.mule.internal"]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

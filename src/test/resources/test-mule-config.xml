@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:akeyless="http://www.mulesoft.org/schema/mule/akeyless"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/akeyless http://www.mulesoft.org/schema/mule/akeyless/current/mule-akeyless.xsd">
+	<akeyless:config name="Akeyless_Config" doc:name="Akeyless Config">
+		<akeyless:connection
+			apiUrl="${akeyless.apiUrl}"
+			authenticationType="ACCESS_KEY"
+			accessId="${akeyless.accessId}"
+			accessKey="${akeyless.accessKey}"
+			secretBasePath="${akeyless.secretBasePath}" />
+	</akeyless:config>
+	<configuration-properties doc:name="Configuration properties"
+		file="${env}.yaml" />
+	<flow name="testStaticFlow">
+		<akeyless:get-static-secret-value doc:name="Akeyless: Get Static Secret Value"
+			config-ref="Akeyless_Config"
+			secretPath="${secretPath}"
+			key="${secretKey}" />
+	</flow>
+	<flow name="testDynamicFlow">
+		<akeyless:get-dynamic-secret-value doc:name="Akeyless: Get Dynamic Secret Value"
+			config-ref="Akeyless_Config"
+			secretPath="${dynamicSecretPath}"
+			key="${secretKey}" />
+	</flow>
+	<flow name="testRotatedFlow">
+		<akeyless:get-rotated-secret-value doc:name="Akeyless: Get Rotated Secret Value"
+			config-ref="Akeyless_Config"
+			secretPath="${rotatedSecretPath}"
+			key="${secretKey}" />
+	</flow>
+</mule>
