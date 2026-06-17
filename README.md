@@ -154,12 +154,12 @@ Pass secrets (`accessKey`, `apiToken`, `jwt`) via secure properties or environme
 |------|----------------|--------|
 | **Anypoint Exchange (public)** | Any MuleSoft customer via Studio search | Medium — needs Anypoint org |
 | **GitHub + README** | Developers who find the repo | Done |
-| **MuleSoft Catalyst listing** | Community users browsing Catalyst repos | Low — open a listing request |
+| **MuleSoft Catalyst listing** | Community users browsing Catalyst repos | Done — [issue #5](https://github.com/mulesoft-catalyst/hashicorp-vault-connector/issues/5) |
 | **Partner marketplace** | Enterprise MuleSoft accounts | High — partner review |
 
 **Recommended:** publish to **public Anypoint Exchange** and link the Exchange asset from this README. Step-by-step instructions: [docs/PUBLISHING.md](docs/PUBLISHING.md).
 
-You do **not** need Exchange to open-source the connector. Exchange is only required for the in-Studio “Search in Exchange” install experience.
+**Community listing:** Catalyst listing request filed ([#5](https://github.com/mulesoft-catalyst/hashicorp-vault-connector/issues/5)). To complete Option C, publish the draft at [docs/COMMUNITY_POST.md](docs/COMMUNITY_POST.md) on the [MuleSoft Community](https://help.mulesoft.com/s/) (requires Anypoint login).
 
 ## Tests
 

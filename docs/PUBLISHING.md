@@ -98,9 +98,11 @@ Then reference it from a Mule app `pom.xml` using `groupId` `io.akeyless` (devel
 
 For broader visibility without owning Exchange publishing:
 
-1. Keep the repo public under [akeyless-community](https://github.com/akeyless-community).
-2. Open a discussion or PR with [mulesoft-catalyst](https://github.com/mulesoft-catalyst) to list it alongside their community connectors.
-3. Share in the [MuleSoft Community](https://help.mulesoft.com/s/) with install instructions linking to this repo and Exchange (once published).
+1. Keep the repo public under [akeyless-community](https://github.com/akeyless-community). **Done**
+2. Open a discussion or PR with [mulesoft-catalyst](https://github.com/mulesoft-catalyst) to list it alongside their community connectors. **Done** — [listing request issue #5](https://github.com/mulesoft-catalyst/hashicorp-vault-connector/issues/5)
+3. Share in the [MuleSoft Community](https://help.mulesoft.com/s/) with install instructions linking to this repo. **Pending** — copy-paste draft in [COMMUNITY_POST.md](./COMMUNITY_POST.md)
+
+Track progress: [COMMUNITY_LISTING.md](./COMMUNITY_LISTING.md)
 
 ## Option D — MuleSoft partner / marketplace path
 
@@ -117,7 +119,7 @@ For official marketplace-style listing:
 | **Now** | Source on GitHub (`akeyless-community/mulesoft-akeyless-connector`) |
 | **Next** | Create Anypoint trial org → publish to Exchange as **Public** |
 | **Then** | Link Exchange asset from README and Akeyless docs |
-| **Optional** | MuleSoft Catalyst community listing + partner program |
+| **Optional** | MuleSoft Catalyst community listing — [issue #5](https://github.com/mulesoft-catalyst/hashicorp-vault-connector/issues/5) filed; [community post](./COMMUNITY_POST.md) ready to publish |
 
 ## Build requirements
 
